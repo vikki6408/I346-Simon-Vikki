@@ -96,7 +96,7 @@ aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
 
 ```
 [OUTPUT]
-//TODO
+An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
@@ -114,27 +114,29 @@ upload: C:\texte.txt to s3://devopsteam09-i346/texte.txt
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
 * [AWS Official Doc - Create Bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples)
+* https://www.geeksforgeeks.org/how-to-upload-files-to-aws-s3-using-cli/
 
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-//TODO
+aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
 ```
 
 ```
 [OUTPUT]
-//TODO
+An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+$ aws s3 cp c:/upload_test s3://devopsteam09-i346 --recursive --profile devopsteam09
 ```
 
 ```
 [OUTPUT]
-//TODO
+upload: .\test1_upload.txt to s3://devopsteam09-i346/test1_upload.txt
+upload: .\test2_upload.txt to s3://devopsteam09-i346/test2_upload.txt
 ```
 
 ### Lister le contenu d'un "repertoire"
@@ -146,23 +148,23 @@ upload: C:\texte.txt to s3://devopsteam09-i346/texte.txt
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-//TODO
+aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
 ```
 
 ```
 [OUTPUT]
-//TODO
+An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+ $ aws s3 ls s3://devopsteam09-i346/path/ --profile devopsteam09
 ```
 
 ```
 [OUTPUT]
-//TODO
+An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
 ```
 
 ### Synchroniser un répertoire local de sa machine avec un bucket
@@ -170,11 +172,12 @@ upload: C:\texte.txt to s3://devopsteam09-i346/texte.txt
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
 * [AWS Official Doc - Create Bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples)
+* https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html
 
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-//TODO
+
 ```
 
 ```
@@ -185,12 +188,12 @@ upload: C:\texte.txt to s3://devopsteam09-i346/texte.txt
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+$ aws s3 sync . s3://devopsteam09-i346 --profile devopsteam09
 ```
 
 ```
 [OUTPUT]
-//TODO
+fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
 ```
 
 ### Publier un fichier présent sur un bucket en générant un lien (url) temporaire
