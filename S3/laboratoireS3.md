@@ -91,7 +91,7 @@ make_bucket: devopsteam99-i346
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-//TODO
+aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
 ```
 
 ```
