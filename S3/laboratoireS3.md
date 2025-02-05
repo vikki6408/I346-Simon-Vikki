@@ -102,12 +102,11 @@ make_bucket: devopsteam99-i346
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+$ aws s3 cp C:\texte.txt s3://devopsteam09-i346/ --profile devopsteam09
 ```
 
 ```
-[OUTPUT]
-//TODO
+upload: C:\texte.txt to s3://devopsteam09-i346/texte.txt
 ```
 
 ### Uploader un répertoire
