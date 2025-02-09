@@ -177,12 +177,12 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User:
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-
+aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
 ```
 
 ```
 [OUTPUT]
-//TODO
+An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
@@ -205,23 +205,24 @@ fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 ope
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-//TODO
+$ aws s3 sync . s3://devopsteam09-i346 --profile devopsteam09
 ```
 
 ```
 [OUTPUT]
-//TODO
+fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+$ aws s3 presign s3://devopsteam09/test2_upload.txt --expires-in 604800 --region eu-central-1 --endpoint-url https://s3.eu-central-1.amazonaws.com
 ```
 
 ```
 [OUTPUT]
-//TODO
+(https://s3.eu-central-1.amazonaws.com/devopsteam09/test2_upload.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2KFJKL4OZXZVCEH6%2F20250209%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250209T200438Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=8ae0d61786c754dd6e3da66c5540b642658628242fadbe6ccb374abda08e2bf2
+)
 ```
 
 ### Supprimer un fichier
