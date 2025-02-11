@@ -86,7 +86,7 @@ make_bucket: devopsteam99-i346
 
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
-* [AWS Official Doc - Create Bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples)
+* [AWS Official Doc - Create Bucket](https://docs.aws.amazon.com/fr_fr/cli/v1/userguide/cli-services-s3-commands.html#using-s3-commands-managing-objects-copy)
 
 * [Vérifier l'état du bucket avant votre commande]
 
@@ -234,23 +234,22 @@ $ aws s3 presign s3://devopsteam09/test2_upload.txt --expires-in 604800 --region
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-//TODO
+aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
 ```
 
 ```
-[OUTPUT]
-//TODO
+fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+$ aws s3 rm s3://devopsteam09-i346//test2_upload.txt --profile devopsteam09
+
 ```
 
 ```
-[OUTPUT]
-//TODO
+delete: s3://devopsteam09-i346//test2_upload.txt
 ```
 
 ### Vider un "repertoire"
@@ -262,18 +261,17 @@ $ aws s3 presign s3://devopsteam09/test2_upload.txt --expires-in 604800 --region
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-//TODO
+aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
 ```
 
 ```
-[OUTPUT]
-//TODO
+fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+$ aws s3 rm s3://devopsteam09-i346/repertoire1/ --recursive --profile devopsteam09
 ```
 
 ```
@@ -290,12 +288,12 @@ $ aws s3 presign s3://devopsteam09/test2_upload.txt --expires-in 604800 --region
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-//TODO
+aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
 ```
 
 ```
-[OUTPUT]
-//TODO
+An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
+
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
@@ -318,12 +316,11 @@ $ aws s3 presign s3://devopsteam09/test2_upload.txt --expires-in 604800 --region
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-//TODO
+aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
 ```
 
 ```
-[OUTPUT]
-//TODO
+An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
