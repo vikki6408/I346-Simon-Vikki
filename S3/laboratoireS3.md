@@ -343,7 +343,7 @@ Consigne : répondre en utilisant des sources officielles et en vous appuyant de
 
 * [Sources AWS]
 
-[Votre réponse]
+Entraîne la perte permanentes des données qu'ils contient. Peut causer des interruption, ou entraîner des coûts supplémentaires pour récuperer les données.
 
 ### Quelle est la différence entre un Bucket S3 et Glacier ?
 
