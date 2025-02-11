@@ -130,13 +130,13 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User:
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-$ aws s3 cp c:/upload_test s3://devopsteam09-i346 --recursive --profile devopsteam09
+$ aws s3 cp C:/Cours/cloud/synchronisation s3://devopsteam09-i346/repertoire1 --recursive --profile devopsteam09
 ```
 
 ```
 [OUTPUT]
-upload: .\test1_upload.txt to s3://devopsteam09-i346/test1_upload.txt
-upload: .\test2_upload.txt to s3://devopsteam09-i346/test2_upload.txt
+upload: Cours\cloud\synchronisation\test1.2.txt to s3://devopsteam09-i346/repertoire1/test1.2.txt
+upload: Cours\cloud\synchronisation\test1.1.txt to s3://devopsteam09-i346/repertoire1/test1.1.txt
 ```
 
 ### Lister le contenu d'un "repertoire"
@@ -148,7 +148,7 @@ upload: .\test2_upload.txt to s3://devopsteam09-i346/test2_upload.txt
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
+$ aws s3 ls s3://devopsteam09-i346 --recursive --profile devopsteam09
 ```
 
 ```
@@ -159,7 +159,7 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User:
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
- $ aws s3 ls s3://devopsteam09-i346/path/ --profile devopsteam09
+ $ aws s3 ls s3://devopsteam09-i346/repertoire1 --profile devopsteam09
 ```
 
 ```
@@ -188,7 +188,7 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User:
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-$ aws s3 sync . s3://devopsteam09-i346 --profile devopsteam09
+$ aws s3 sync C:/Cours/cloud/synchronisation s3://devopsteam09-i346 --profile devopsteam09
 ```
 
 ```
@@ -216,13 +216,12 @@ fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 ope
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-$ aws s3 presign s3://devopsteam09/test2_upload.txt --expires-in 604800 --region eu-central-1 --endpoint-url https://s3.eu-central-1.amazonaws.com
+$ aws s3 presign s3://devopsteam09-i346/test2_upload.txt --expires-in 604800 --region eu-central-1 --endpoint-url https://s3.eu-central-1.amazonaws.com --profile devopsteam09
 ```
 
 ```
 [OUTPUT]
-(https://s3.eu-central-1.amazonaws.com/devopsteam09/test2_upload.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2KFJKL4OZXZVCEH6%2F20250209%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250209T200438Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=8ae0d61786c754dd6e3da66c5540b642658628242fadbe6ccb374abda08e2bf2
-)
+https://s3.eu-central-1.amazonaws.com/devopsteam09-i346/test2_upload.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2KFJKL4OZXZVCEH6%2F20250211%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250211T125229Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=53787a1939d55582c144bef3dae6590afcce827cf34acb29ad96bf60621c5be7
 ```
 
 ### Supprimer un fichier
@@ -326,12 +325,12 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User:
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+$ aws s3 rm s3://devopsteam09-i346 --recursive --profile devopsteam09
 ```
 
 ```
 [OUTPUT]
-//TODO
+fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
 ```
 
 ---
