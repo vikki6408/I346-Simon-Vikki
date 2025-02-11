@@ -349,7 +349,7 @@ Entraîne la perte permanentes des données qu'ils contient. Peut causer des int
 
 * [Sources AWS]
 
-[Votre réponse]
+le bucket s3 Glacier est un service distinct qui stocke les données sous forme d'archives dans des coffres-forts. Il est déconseiller de l'utilisser pour des données à long termes.
 
 ### Reprenez l'IAM "Policy" et expliquer ce que vous pouvez en déduire au niveau des droits qui vous sont alloués
 
