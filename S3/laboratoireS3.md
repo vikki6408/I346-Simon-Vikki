@@ -86,12 +86,13 @@ make_bucket: devopsteam99-i346
 
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
-* [AWS Official Doc - Create Bucket](https://docs.aws.amazon.com/fr_fr/cli/v1/userguide/cli-services-s3-commands.html#using-s3-commands-managing-objects-copy)
+* https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/cp.html 
 
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
+aws s3 ls s3://devopsteam09-i346 \
+--profile devopsteam09
 ```
 
 ```
@@ -102,7 +103,8 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User:
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-$ aws s3 cp C:\texte.txt s3://devopsteam09-i346/ --profile devopsteam09
+$ aws s3 cp C:\texte.txt s3://devopsteam09-i346/ \
+--profile devopsteam09
 ```
 
 ```
@@ -119,7 +121,8 @@ upload: C:\texte.txt to s3://devopsteam09-i346/texte.txt
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
+aws s3 ls s3://devopsteam09-i346 \
+--profile devopsteam09
 ```
 
 ```
@@ -130,7 +133,9 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User:
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-$ aws s3 cp C:/Cours/cloud/synchronisation s3://devopsteam09-i346/repertoire1 --recursive --profile devopsteam09
+$ aws s3 cp .  /Cours/cloud/synchronisation s3://devopsteam09-i346/repertoire1 \
+--recursive \
+--profile devopsteam09
 ```
 
 ```
@@ -148,7 +153,9 @@ upload: Cours\cloud\synchronisation\test1.1.txt to s3://devopsteam09-i346/repert
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-$ aws s3 ls s3://devopsteam09-i346 --recursive --profile devopsteam09
+$ aws s3 ls s3://devopsteam09-i346 \
+--recursive \
+--profile devopsteam09
 ```
 
 ```
@@ -159,7 +166,8 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User:
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
- $ aws s3 ls s3://devopsteam09-i346/repertoire1 --profile devopsteam09
+ $ aws s3 ls s3://devopsteam09-i346/repertoire1 \
+--profile devopsteam09
 ```
 
 ```
@@ -177,7 +185,8 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User:
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
+aws s3 ls s3://devopsteam09-i346 \
+--profile devopsteam09
 ```
 
 ```
@@ -188,7 +197,8 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User:
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-$ aws s3 sync C:/Cours/cloud/synchronisation s3://devopsteam09-i346 --profile devopsteam09
+$ aws s3 sync C:/Cours/cloud/synchronisation s3://devopsteam09-i346 \
+--profile devopsteam09
 ```
 
 ```
@@ -205,7 +215,8 @@ fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 ope
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-$ aws s3 sync . s3://devopsteam09-i346 --profile devopsteam09
+$ aws s3 sync . s3://devopsteam09-i346 \
+--profile devopsteam09
 ```
 
 ```
@@ -216,7 +227,11 @@ fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 ope
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-$ aws s3 presign s3://devopsteam09-i346/test2_upload.txt --expires-in 604800 --region eu-central-1 --endpoint-url https://s3.eu-central-1.amazonaws.com --profile devopsteam09
+$ aws s3 presign s3://devopsteam09-i346/test2_upload.txt \
+--expires-in 604800 \
+--region eu-central-1 \
+--endpoint-url https://s3.eu-central-1.amazonaws.com <
+--profile devopsteam09
 ```
 
 ```
@@ -233,7 +248,8 @@ https://s3.eu-central-1.amazonaws.com/devopsteam09-i346/test2_upload.txt?X-Amz-A
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
+aws s3 ls s3://devopsteam09-i346 \
+--profile devopsteam09
 ```
 
 ```
@@ -243,7 +259,8 @@ fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 ope
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-$ aws s3 rm s3://devopsteam09-i346//test2_upload.txt --profile devopsteam09
+$ aws s3 rm s3://devopsteam09-i346//test2_upload.txt \
+--profile devopsteam09
 
 ```
 
@@ -260,7 +277,8 @@ delete: s3://devopsteam09-i346//test2_upload.txt
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
+aws s3 ls s3://devopsteam09-i346 \
+--profile devopsteam09
 ```
 
 ```
@@ -270,7 +288,9 @@ fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 ope
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-$ aws s3 rm s3://devopsteam09-i346/repertoire1/ --recursive --profile devopsteam09
+$ aws s3 rm s3://devopsteam09-i346/repertoire1/ \
+--recursive \
+--profile devopsteam09
 ```
 
 ```
@@ -287,7 +307,8 @@ $ aws s3 rm s3://devopsteam09-i346/repertoire1/ --recursive --profile devopsteam
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
+aws s3 ls s3://devopsteam09-i346 \
+--profile devopsteam09
 ```
 
 ```
@@ -315,7 +336,8 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User:
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-aws s3 ls s3://devopsteam09-i346 --profile devopsteam09
+aws s3 ls s3://devopsteam09-i346 \
+--profile devopsteam09
 ```
 
 ```
@@ -325,7 +347,9 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User:
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-$ aws s3 rm s3://devopsteam09-i346 --recursive --profile devopsteam09
+$ aws s3 rm s3://devopsteam09-i346 \
+--recursive \
+--profile devopsteam09
 ```
 
 ```
