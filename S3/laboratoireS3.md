@@ -97,7 +97,14 @@ aws s3 ls s3://devopsteam09-i346 \
 
 ```
 [OUTPUT]
-An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
+                           PRE path/
+                           PRE repertoire1/
+                           PRE test/
+2025-02-12 12:20:33          0 test1.txt
+2025-02-05 18:56:19          5 test1_upload.txt
+2025-02-05 18:56:19          5 test2_upload.txt
+2025-02-11 13:40:00          0 texte.txt
+2025-02-05 18:09:17          0 upload_file.txt
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
@@ -127,7 +134,14 @@ aws s3 ls s3://devopsteam09-i346 \
 
 ```
 [OUTPUT]
-An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
+                           PRE path/
+                           PRE repertoire1/
+                           PRE test/
+2025-02-12 12:20:33          0 test1.txt
+2025-02-05 18:56:19          5 test1_upload.txt
+2025-02-05 18:56:19          5 test2_upload.txt
+2025-02-11 13:40:00          0 texte.txt
+2025-02-05 18:09:17          0 upload_file.txt
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
@@ -160,7 +174,14 @@ $ aws s3 ls s3://devopsteam09-i346 \
 
 ```
 [OUTPUT]
-An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
+                           PRE path/
+                           PRE repertoire1/
+                           PRE test/
+2025-02-12 12:20:33          0 test1.txt
+2025-02-05 18:56:19          5 test1_upload.txt
+2025-02-05 18:56:19          5 test2_upload.txt
+2025-02-11 13:40:00          0 texte.txt
+2025-02-05 18:09:17          0 upload_file.txt
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
@@ -191,7 +212,14 @@ aws s3 ls s3://devopsteam09-i346 \
 
 ```
 [OUTPUT]
-An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
+                           PRE path/
+                           PRE repertoire1/
+                           PRE test/
+2025-02-12 12:20:33          0 test1.txt
+2025-02-05 18:56:19          5 test1_upload.txt
+2025-02-05 18:56:19          5 test2_upload.txt
+2025-02-11 13:40:00          0 texte.txt
+2025-02-05 18:09:17          0 upload_file.txt
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
@@ -221,7 +249,14 @@ $ aws s3 sync . s3://devopsteam09-i346 \
 
 ```
 [OUTPUT]
-fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
+                           PRE path/
+                           PRE repertoire1/
+                           PRE test/
+2025-02-12 12:20:33          0 test1.txt
+2025-02-05 18:56:19          5 test1_upload.txt
+2025-02-05 18:56:19          5 test2_upload.txt
+2025-02-11 13:40:00          0 texte.txt
+2025-02-05 18:09:17          0 upload_file.txt
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
@@ -253,7 +288,14 @@ aws s3 ls s3://devopsteam09-i346 \
 ```
 
 ```
-fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
+                           PRE path/
+                           PRE repertoire1/
+                           PRE test/
+2025-02-12 12:20:33          0 test1.txt
+2025-02-05 18:56:19          5 test1_upload.txt
+2025-02-05 18:56:19          5 test2_upload.txt
+2025-02-11 13:40:00          0 texte.txt
+2025-02-05 18:09:17          0 upload_file.txt
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
@@ -282,7 +324,14 @@ aws s3 ls s3://devopsteam09-i346 \
 ```
 
 ```
-fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
+                           PRE path/
+                           PRE repertoire1/
+                           PRE test/
+2025-02-12 12:20:33          0 test1.txt
+2025-02-05 18:56:19          5 test1_upload.txt
+2025-02-05 18:56:19          5 test2_upload.txt
+2025-02-11 13:40:00          0 texte.txt
+2025-02-05 18:09:17          0 upload_file.txt
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
@@ -312,8 +361,14 @@ aws s3 ls s3://devopsteam09-i346 \
 ```
 
 ```
-An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
-
+                           PRE path/
+                           PRE repertoire1/
+                           PRE test/
+2025-02-12 12:20:33          0 test1.txt
+2025-02-05 18:56:19          5 test1_upload.txt
+2025-02-05 18:56:19          5 test2_upload.txt
+2025-02-11 13:40:00          0 texte.txt
+2025-02-05 18:09:17          0 upload_file.txt
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
@@ -341,7 +396,14 @@ aws s3 ls s3://devopsteam09-i346 \
 ```
 
 ```
-An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
+                           PRE path/
+                           PRE repertoire1/
+                           PRE test/
+2025-02-12 12:20:33          0 test1.txt
+2025-02-05 18:56:19          5 test1_upload.txt
+2025-02-05 18:56:19          5 test2_upload.txt
+2025-02-11 13:40:00          0 texte.txt
+2025-02-05 18:09:17          0 upload_file.txt
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
