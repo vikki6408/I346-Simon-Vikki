@@ -411,12 +411,22 @@ aws s3 ls s3://devopsteam09-i346 \
 ```bash
 $ aws s3 rm s3://devopsteam09-i346 \
 --recursive \
---profile devopsteam09
+--profile devopsteam09   
 ```
 
 ```
 [OUTPUT]
-fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:iam::709024702237:user/devopsteam09-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam09-i346" because no identity-based policy allows the s3:ListBucket action
+delete: s3://devopsteam09-i346/path/test1_upload.txt
+delete: s3://devopsteam09-i346/test1_upload.txt
+delete: s3://devopsteam09-i346/upload_file.txt
+delete: s3://devopsteam09-i346/path/test2_upload.txt
+delete: s3://devopsteam09-i346/test2_upload.txt
+delete: s3://devopsteam09-i346/repertoire1/test1.1.txt
+delete: s3://devopsteam09-i346/test1.txt
+delete: s3://devopsteam09-i346/texte.txt
+delete: s3://devopsteam09-i346/repertoire1/test1.2.txt
+delete: s3://devopsteam09-i346/test/test2_upload.txt
+delete: s3://devopsteam09-i346/test/test1_upload.txt
 ```
 
 ---
