@@ -133,7 +133,7 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User:
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-$ aws s3 cp .  /Cours/cloud/synchronisation s3://devopsteam09-i346/repertoire1 \
+$ aws s3 cp ./Cours/cloud/synchronisation s3://devopsteam09-i346/repertoire1 \
 --recursive \
 --profile devopsteam09
 ```
