@@ -103,12 +103,12 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User:
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-$ aws s3 cp C:\texte.txt s3://devopsteam09-i346/ \
+$ aws s3 cp ./cloud/test1.txt s3://devopsteam09-i346/ \
 --profile devopsteam09
 ```
 
 ```
-upload: C:\texte.txt to s3://devopsteam09-i346/texte.txt
+upload: .\test1.txt to s3://devopsteam09-i346/test1.txt
 ```
 
 ### Uploader un répertoire
