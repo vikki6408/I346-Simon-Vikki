@@ -148,7 +148,7 @@ upload: Cours\cloud\synchronisation\test1.1.txt to s3://devopsteam09-i346/repert
 
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
-* [AWS Official Doc - Create Bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples)
+* [AWS Official Doc - Repertori upload]([https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/cp.html))
 
 * [Vérifier l'état du bucket avant votre commande]
 
