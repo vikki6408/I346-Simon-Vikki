@@ -17,7 +17,6 @@ VPC {
 }
 
 
-
 // Define connections
 IGW > SSH SRV > Routage Table > Subnet
 Routage Table > NAT > IGW
