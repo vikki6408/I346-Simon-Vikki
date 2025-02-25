@@ -73,7 +73,9 @@ aws s3 ls --profile devopsteam99-i346 | grep "devopsteam*"
 * Créer un bucket (via un compte admin)
 
 ```bash
-aws s3 mb s3://devopsteam99-i346 --region eu-central-1 --profile s3-admin
+aws s3 mb s3://devopsteam99-i346 ^
+--region eu-central-1 ^
+--profile s3-admin
 ```
 
 ```
@@ -91,7 +93,7 @@ make_bucket: devopsteam99-i346
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-aws s3 ls s3://devopsteam09-i346 \
+aws s3 ls s3://devopsteam09-i346 ^
 --profile devopsteam09
 ```
 
@@ -187,7 +189,8 @@ $ aws s3 ls s3://devopsteam09-i346 \
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
- $ aws s3 ls s3://devopsteam09-i346/repertoire1 \
+ $ aws s3 ls s3://devopsteam09-i346 \
+--recursive \
 --profile devopsteam09
 ```
 
@@ -243,7 +246,7 @@ fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 ope
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-$ aws s3 sync . s3://devopsteam09-i346 \
+$ aws s3 ls s3://devopsteam09-i346 \
 --profile devopsteam09
 ```
 
@@ -263,9 +266,8 @@ $ aws s3 sync . s3://devopsteam09-i346 \
 
 ```bash
 $ aws s3 presign s3://devopsteam09-i346/test2_upload.txt \
---expires-in 604800 \
---region eu-central-1 \
---endpoint-url https://s3.eu-central-1.amazonaws.com <
+--expires-in 60 \
+--region eu-central-1 \ 
 --profile devopsteam09
 ```
 
@@ -374,12 +376,21 @@ aws s3 ls s3://devopsteam09-i346 \
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+aws s3api get-object-attributes ^
+--bucket devopsteam09-i346 ^
+--key test2.jpg ^
+--object-attributes ObjectSize ^
+--profile devopsteam99-i346
 ```
 
 ```
 [OUTPUT]
-//TODO
+[OUTPUT]
+{
+{
+    "LastModified": "2025-02-23T08:32:02+00:00",
+    "ObjectSize": 17010
+}
 ```
 
 ### Vider le bucket
@@ -409,7 +420,7 @@ aws s3 ls s3://devopsteam09-i346 \
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-$ aws s3 rm s3://devopsteam09-i346 \
+$ aws s3 rm s3://devopsteam09-i346/ \
 --recursive \
 --profile devopsteam09   
 ```
@@ -439,13 +450,13 @@ Consigne : répondre en utilisant des sources officielles et en vous appuyant de
 
 * [Sources AWS]
 
-Entraîne la perte permanentes des données qu'ils contient. Peut causer des interruption, ou entraîner des coûts supplémentaires pour récuperer les données.
+AWS déconseille de supprimer un bucket. Le nom étant unique est impactant les DNS, une suppression/recréation (par exemple lors de tests automatique) risque de rendre l'état des DNS instables. En supprimant un Bucket, vous permettez à un autre utilisateur de le créer et vous risquez ainsi de ne plus pouvoir l'utiliser ce nom. Le coût d'un Bucket vide est nul. Autrement dit si vous désirez utiliser ce Bucket dans un avenir proche, laissez-le en place.
 
 ### Quelle est la différence entre un Bucket S3 et Glacier ?
 
 * [Sources AWS]
 
-le bucket s3 Glacier est un service distinct qui stocke les données sous forme d'archives dans des coffres-forts. Il est déconseiller de l'utilisser pour des données à long termes.
+Glacier est un produit utilisant les mêmes concepts d'"Object Storage" que S3. La différence majeure est la nécessité d'accéder aux données stockées. En effet Glacier est prévu pour de l'archivage. Le temps de récupération peut être de plusieurs heures (max 12 heures). Cette lenteur qui n'est pas acceptable pour l'hébergement de fichier dont nous avons régulièrement besoin et cependant très intéressante pour des archives. Le coût de stockage devient dérisoire sur Glacier.
 
 ### Reprenez l'IAM "Policy" et expliquer ce que vous pouvez en déduire au niveau des droits qui vous sont alloués
 
