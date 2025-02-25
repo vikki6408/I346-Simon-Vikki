@@ -458,6 +458,13 @@ AWS déconseille de supprimer un bucket. Le nom étant unique est impactant les 
 
 Glacier est un produit utilisant les mêmes concepts d'"Object Storage" que S3. La différence majeure est la nécessité d'accéder aux données stockées. En effet Glacier est prévu pour de l'archivage. Le temps de récupération peut être de plusieurs heures (max 12 heures). Cette lenteur qui n'est pas acceptable pour l'hébergement de fichier dont nous avons régulièrement besoin et cependant très intéressante pour des archives. Le coût de stockage devient dérisoire sur Glacier.
 
+Rapide comparatif
+|Produit|Temps de récupération|Coût ($/Gb|
+|:--|:--|:--|
+|S3 Standard|Immédiat|Entre 0.0021-0.0023|
+|Glacier Deep Archive|Jusqu'à 12 heures|0.00099|
+
+
 ### Reprenez l'IAM "Policy" et expliquer ce que vous pouvez en déduire au niveau des droits qui vous sont alloués
 
 Consigne : Reprenez la "policy" et documenter chaque ligne
