@@ -448,13 +448,13 @@ Consigne : répondre en utilisant des sources officielles et en vous appuyant de
 
 ### Pourquoi est-il déconseillé de détruire un bucket S3 selon AWS ?
 
-* [Sources AWS]
+* [Sources AWS](https://docs.aws.amazon.com/AmazonS3/latest/userguide/delete-bucket.html)
 
 AWS déconseille de supprimer un bucket. Le nom étant unique est impactant les DNS, une suppression/recréation (par exemple lors de tests automatique) risque de rendre l'état des DNS instables. En supprimant un Bucket, vous permettez à un autre utilisateur de le créer et vous risquez ainsi de ne plus pouvoir l'utiliser ce nom. Le coût d'un Bucket vide est nul. Autrement dit si vous désirez utiliser ce Bucket dans un avenir proche, laissez-le en place.
 
 ### Quelle est la différence entre un Bucket S3 et Glacier ?
 
-* [Sources AWS]
+* [Sources AWS](https://aws.amazon.com/s3/storage-classes/glacier/)
 
 Glacier est un produit utilisant les mêmes concepts d'"Object Storage" que S3. La différence majeure est la nécessité d'accéder aux données stockées. En effet Glacier est prévu pour de l'archivage. Le temps de récupération peut être de plusieurs heures (max 12 heures). Cette lenteur qui n'est pas acceptable pour l'hébergement de fichier dont nous avons régulièrement besoin et cependant très intéressante pour des archives. Le coût de stockage devient dérisoire sur Glacier.
 
@@ -464,6 +464,7 @@ Rapide comparatif
 |S3 Standard|Immédiat|Entre 0.0021-0.0023|
 |Glacier Deep Archive|Jusqu'à 12 heures|0.00099|
 
+[Source](https://aws.amazon.com/s3/pricing/)
 
 ### Reprenez l'IAM "Policy" et expliquer ce que vous pouvez en déduire au niveau des droits qui vous sont alloués
 
