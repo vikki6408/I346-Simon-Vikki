@@ -1,0 +1,26 @@
+cloud-architecture-diagram
+
+// Define groups and nodes
+PC USER [icon: aws-compute]
+IGW [icon: aws-api-gateway]
+
+VPC {
+  Public {
+    SSH SRV [icon: aws-outposts-servers]
+    NAT [icon: gcp-cloud-nat]
+  }
+  Routage Table [icon: aws-auto-scaling]
+  Subnet {
+    WINDOWS [icon: aws-ec2]
+    LINUX [icon: aws-ec2]
+  }
+}
+
+
+// Define connections
+IGW > SSH SRV > Routage Table > Subnet
+Routage Table > NAT > IGW
+PC USER > IGW
+IGW > PC USER
+
+
