@@ -1,6 +1,5 @@
 cloud-architecture-diagram
 
-// Define groups and nodes
 PC USER [icon: aws-compute]
 IGW [icon: aws-api-gateway]
 
@@ -18,9 +17,9 @@ VPC {
 
 
 // Define connections
-IGW > SSH SRV > Routage Table <> Subnet
-Routage Table > NAT > IGW
-PC USER > IGW
-IGW > PC USER
+IGW > SSH SRV > Routage Table 
+IGW < NAT < Routage Table 
+IGW <> PC USER
+Routage Table <> Subnet
 
 
