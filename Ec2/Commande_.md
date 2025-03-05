@@ -504,12 +504,12 @@ $ aws ec2 create-route-table ^
 
 ### ADD ROUTE IN ROUTE TABLE
 
-* [AWS Official Doc - Create Bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples)
+* [AWS Official Doc - Create Bucket]([(https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ec2/create-route.html)])
 
 ```bash
-$ aws s3 cp ./Cours/cloud/synchronisation s3://devopsteam09-i346/repertoire1 \
---recursive \
---profile devopsteam09
+$ aws ec2 create-route --profile devopsteam09 --region eu-central-1 --route-table-id rtb-00b3f747f972f123a --destination-cidr-block 10.0.0.0/16 --vpc-peering-connection-id vpc-0a22d771f16ae549d
+
+
 ```
 
 ```
