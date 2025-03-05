@@ -472,7 +472,7 @@ $ aws ec2 describe-subnets ^
 * [AWS Official Doc - Create route table]([https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples](https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ec2/create-route-table.html))
 
 ```bash
-$ aws ec2 create-route-table `
+$ aws ec2 create-route-table ^
  --profile devopsteam09 ^
  --region eu-central-1 ^
  --vpc-id vpc-0a22d771f16ae549d
