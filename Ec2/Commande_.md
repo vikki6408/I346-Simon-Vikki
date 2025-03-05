@@ -469,18 +469,37 @@ $ aws ec2 describe-subnets ^
 
 ### CREATE ROUTE TABLE
 
-* [AWS Official Doc - Create Bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples)
+* [AWS Official Doc - Create route table]([https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples](https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ec2/create-route-table.html))
 
 ```bash
-$ aws s3 cp ./Cours/cloud/synchronisation s3://devopsteam09-i346/repertoire1 \
---recursive \
---profile devopsteam09
+$ aws ec2 create-route-table `
+ --profile devopsteam09 ^
+ --region eu-central-1 ^
+ --vpc-id vpc-0a22d771f16ae549d
+
 ```
 
 ```
 [OUTPUT]
-upload: Cours\cloud\synchronisation\test1.2.txt to s3://devopsteam09-i346/repertoire1/test1.2.txt
-upload: Cours\cloud\synchronisation\test1.1.txt to s3://devopsteam09-i346/repertoire1/test1.1.txt
+{
+    "RouteTable": {
+        "Associations": [],
+        "PropagatingVgws": [],
+        "RouteTableId": "rtb-00b3f747f972f123a",
+        "Routes": [
+            {
+                "DestinationCidrBlock": "10.0.0.0/16",
+                "GatewayId": "local",
+                "Origin": "CreateRouteTable",
+                "State": "active"
+            }
+        ],
+        "Tags": [],
+        "VpcId": "vpc-0a22d771f16ae549d",
+        "OwnerId": "709024702237"
+    },
+    "ClientToken": "d1d9c3c1-04d8-40c8-9db4-22efe7d732fa"
+}
 ```
 
 ### ADD ROUTE IN ROUTE TABLE
