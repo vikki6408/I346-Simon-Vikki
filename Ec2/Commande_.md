@@ -475,13 +475,10 @@ $ aws ec2 describe-subnets ^
 $ aws ec2 create-route-table ^
  --profile devopsteam09 ^
  --region eu-central-1 ^
- --vpc-id vpc-0a22d771f16ae549d ^
---tag-specifications ResourceType=route-table,Tags=[{Key=Name,Value=private-rte-table-devopsteam09}]
-
+ --vpc-id vpc-0a22d771f16ae549d 
 ```
 
 ```
-Attnetion manque le tag dans le résultat
 [OUTPUT]
 {
     "RouteTable": {
@@ -504,7 +501,36 @@ Attnetion manque le tag dans le résultat
 }
 ```
 
+### ADD TAG NAME AFTER CREATION (Route table)
+
+* [AWS Official Doc - add tag]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-tags.html))
+
+```bash
+$ aws ec2 create-tags --resources rtb-0a9293aaf3c30b82c --tags Key=Name,Value=private-rte-table-devopsteam09
+```
+
+```
+[OUTPUT]
+
+```
+
 ### ADD ROUTE IN ROUTE TABLE
+
+* [AWS Official Doc - Associate route table to subnet](https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html)
+
+```bash
+
+
+
+
+```
+
+```
+[OUTPUT]
+
+```
+
+### ASSOCIATE ROUTE TABLE TO SUBNETS
 
 * [AWS Official Doc - Associate route table to subnet](https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html)
 
@@ -514,29 +540,9 @@ $ aws ec2 associate-route-table^
 --subnet-id subnet-0ab631f69a314e92d^
 --region eu-central-1^
 --profile devopsteam09
-
-
-
 ```
 
 ```
 [OUTPUT]
-upload: Cours\cloud\synchronisation\test1.2.txt to s3://devopsteam09-i346/repertoire1/test1.2.txt
-upload: Cours\cloud\synchronisation\test1.1.txt to s3://devopsteam09-i346/repertoire1/test1.1.txt
-```
 
-### ASSOCIATE ROUTE TABLE TO SUBNETS
-
-* [AWS Official Doc - Create Bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples)
-
-```bash
-$ aws s3 cp ./Cours/cloud/synchronisation s3://devopsteam09-i346/repertoire1 \
---recursive \
---profile devopsteam09
-```
-
-```
-[OUTPUT]
-upload: Cours\cloud\synchronisation\test1.2.txt to s3://devopsteam09-i346/repertoire1/test1.2.txt
-upload: Cours\cloud\synchronisation\test1.1.txt to s3://devopsteam09-i346/repertoire1/test1.1.txt
 ```
