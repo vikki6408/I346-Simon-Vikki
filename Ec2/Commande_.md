@@ -506,10 +506,15 @@ Attnetion manque le tag dans le résultat
 
 ### ADD ROUTE IN ROUTE TABLE
 
-* [AWS Official Doc - Create Bucket]([(https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ec2/create-route.html)])
+* [AWS Official Doc - Associate route table to subnet](https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html)
 
 ```bash
-$ aws ec2 create-route --profile devopsteam09 --region eu-central-1 --route-table-id rtb-00b3f747f972f123a --destination-cidr-block 10.0.0.0/16 --vpc-peering-connection-id vpc-0a22d771f16ae549d
+$ aws ec2 associate-route-table^
+--route-table-id rtb-0a9293aaf3c30b82c^
+--subnet-id subnet-0ab631f69a314e92d^
+--region eu-central-1^
+--profile devopsteam09
+
 
 
 ```
