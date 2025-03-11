@@ -475,11 +475,13 @@ $ aws ec2 describe-subnets ^
 $ aws ec2 create-route-table ^
  --profile devopsteam09 ^
  --region eu-central-1 ^
- --vpc-id vpc-0a22d771f16ae549d
+ --vpc-id vpc-0a22d771f16ae549d ^
+--tag-specifications ResourceType=route-table,Tags=[{Key=Name,Value=private-rte-table-devopsteam09}]
 
 ```
 
 ```
+Attnetion manque le tag dans le résultat
 [OUTPUT]
 {
     "RouteTable": {
