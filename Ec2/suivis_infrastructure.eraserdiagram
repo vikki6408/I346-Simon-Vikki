@@ -1,0 +1,21 @@
+cloud-architecture-diagram
+
+
+IGW [icon: aws-api-gateway]
+
+VPC {
+  Public {
+    SSH SRV [icon: aws-outposts-servers]
+
+  }
+  Routage Table [icon: aws-auto-scaling]
+  Subnet {
+
+  }
+}
+
+
+// Define connections
+IGW > SSH SRV > Routage Table  
+
+Routage Table <> Subnet
