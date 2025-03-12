@@ -519,7 +519,7 @@ $ aws ec2 create-tags --resources rtb-0a9293aaf3c30b82c --tags Key=Name,Value=pr
 * [AWS Official Doc - Add route in route table]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ec2/create-route.html))
 
 ```bash
-$ aws ec2 create-route --route-table-id <private-route-table-id> --destination-cidr-block 0.0.0.0/0 (pool d'adresse autorisée) -- target ? --nat-gateway-id avec le eni bucket du prof --region eu-central-1 --profile devopsteam09
+$ aws ec2 create-route --route-table-id rtb-0a9293aaf3c30b82c --destination-cidr-block 0.0.0.0/0 (pool d'adresse autorisée) -- target  --eni-0e382f5c175b09ce2 --region eu-central-1 --profile devopsteam09
 ```
 
 ```
@@ -541,5 +541,12 @@ $ aws ec2 associate-route-table^
 
 ```
 [OUTPUT]
+{
+    "AssociationId": "rtbassoc-02be5f3b76aee3c4c",
+    "AssociationState": {
+        "State": "associated"
+    }
+}
+
 
 ```
