@@ -559,25 +559,32 @@ $ aws ec2 associate-route-table^
 ```
 ### CREATE SUBNET SECURITY GROUP
 
-* [AWS Official Doc - Associate route table to subnet](https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html)
+* [AWS Official Doc - CREATE SUBNET SECURITY GROUP](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-security-group.html)
 
 ```bash
-$ aws ec2 associate-route-table^
---route-table-id rtb-0a9293aaf3c30b82c^
---subnet-id subnet-0ab631f69a314e92d^
---region eu-central-1^
---profile devopsteam09
+$ aws ec2 create-security-group^
+--group-name secugrp-i346-devopsteam09^
+--description secugrp-i346-devopsteam09^
+--vpc-id vpc-0a22d771f16ae549d^
+--tag-specifications 'ResourceType=security-group,Tags=[{Key=Name,Value=SG-DEVOPSTEAM09-SUBNET}]'^
+--region eu-central-1 --profile devopsteam09^
+--output table
+
 ```
 
 ```
 [OUTPUT]
-{
-    "AssociationId": "rtbassoc-02be5f3b76aee3c4c",
-    "AssociationState": {
-        "State": "associated"
-    }
-}
-
+---------------------------------------------------------------------------------------------------
+|                                       CreateSecurityGroup                                       |
++------------------+------------------------------------------------------------------------------+
+|  GroupId         |  sg-06c9cb6e3625401fa                                                        |
+|  SecurityGroupArn|  arn:aws:ec2:eu-central-1:709024702237:security-group/sg-06c9cb6e3625401fa   |
++------------------+------------------------------------------------------------------------------+
+||                                             Tags                                              ||
+|+-----------------------+-----------------------------------------------------------------------+|
+||  Key                  |  Name                                                                 ||
+||  Value                |  SG-DEVOPSTEAM09-SUBNET                                               ||
+|+-----------------------+-----------------------------------------------------------------------+|
 
 ```
 ### CREATE AND UPLOAD PRIVATE KEY PAIR
