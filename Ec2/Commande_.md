@@ -557,3 +557,49 @@ $ aws ec2 associate-route-table^
 
 
 ```
+### CREATE SUBNET SECURITY GROUP
+
+* [AWS Official Doc - Associate route table to subnet](https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html)
+
+```bash
+$ aws ec2 associate-route-table^
+--route-table-id rtb-0a9293aaf3c30b82c^
+--subnet-id subnet-0ab631f69a314e92d^
+--region eu-central-1^
+--profile devopsteam09
+```
+
+```
+[OUTPUT]
+{
+    "AssociationId": "rtbassoc-02be5f3b76aee3c4c",
+    "AssociationState": {
+        "State": "associated"
+    }
+}
+
+
+```
+### CREATE AND UPLOAD PRIVATE KEY PAIR
+
+* [AWS Official Doc - Associate route table to subnet](https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html)
+
+```bash
+$ aws ec2 associate-route-table^
+--route-table-id rtb-0a9293aaf3c30b82c^
+--subnet-id subnet-0ab631f69a314e92d^
+--region eu-central-1^
+--profile devopsteam09
+```
+
+```
+[OUTPUT]
+{
+    "AssociationId": "rtbassoc-02be5f3b76aee3c4c",
+    "AssociationState": {
+        "State": "associated"
+    }
+}
+
+
+```
