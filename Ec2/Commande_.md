@@ -592,7 +592,7 @@ $ aws ec2 create-security-group^
 * [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
 
 ```bash
-$ aws ec2 create-key-pair --key-name KEY-I346-SUB-DEVOPSTEAM99 --key-type rsa --key-format pem --tag-specifications 'ResourceType=key-pair,Tags=[{Key=Name,Value=KEY-I346-SUB-DEVOPSTEAM09}]' --region eu-central-1 --profile devopsteam09 --output text
+$ aws ec2 create-key-pair --key-name KEY-I346-SUB-DEVOPSTEAM09 --key-type rsa --key-format pem --tag-specifications 'ResourceType=key-pair,Tags=[{Key=Name,Value=KEY-I346-SUB-DEVOPSTEAM09}]' --region eu-central-1 --profile devopsteam09 --output text > KEY.pem
 ```
 
 ```
