@@ -616,7 +616,16 @@ $ aws ec2 create-key-pair --key-name KEY-I346-SUB-DEVOPSTEAM09 --key-type rsa --
 * [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
 
 ```bash
-$ aws ec2 run-instances --image-id ami-0584590e5f0e97daa --instance-type t2.micro --key-name KEY-I346-SUB-DEVOPSTEAM09 --subnet-id subnet-0ab631f69a314e92d --security-group-ids sg-06c9cb6e3625401fa --private-ip-address 10.0.9.10 --region eu-central-1 --profile devopsteam09 --output table
+$ aws ec2 run-instances ^
+--image-id ami-0584590e5f0e97daa ^
+--instance-type t2.micro ^
+--key-name KEY-I346-SUB-DEVOPSTEAM09 ^
+--subnet-id subnet-0ab631f69a314e92d ^
+--security-group-ids sg-06c9cb6e3625401fa ^
+--private-ip-address 10.0.9.10 ^
+--region eu-central-1 ^
+--profile devopsteam09 ^
+--output table
 ```
 
 ```
