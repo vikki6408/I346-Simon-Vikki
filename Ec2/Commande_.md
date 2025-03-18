@@ -627,7 +627,8 @@ $ aws ec2 run-instances ^
 --profile devopsteam09 ^
 --output table
 ```
-
+ATTENTION PAS OBLIé LE TAG
+$ aws ec2 create-tags --resources i-0505d348163787cc3 --tags Key=Name,Value=EC2-DEVOPSTEAM09-LIN-SRV
 ```
 [OUTPUT]
 -----------------------------------------------------------------------------
