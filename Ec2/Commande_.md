@@ -616,10 +616,138 @@ $ aws ec2 create-key-pair --key-name KEY-I346-SUB-DEVOPSTEAM09 --key-type rsa --
 * [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
 
 ```bash
-$ aws ec2 create-key-pair --key-name KEY-I346-SUB-DEVOPSTEAM09 --key-type rsa --key-format pem --tag-specifications 'ResourceType=key-pair,Tags=[{Key=Name,Value=KEY-I346-SUB-DEVOPSTEAM09}]' --region eu-central-1 --profile devopsteam09 --output text > KEY.pem
+$ aws ec2 run-instances --image-id ami-0584590e5f0e97daa --instance-type t2.micro --key-name KEY-I346-SUB-DEVOPSTEAM09 --subnet-id subnet-0ab631f69a314e92d --security-group-ids sg-06c9cb6e3625401fa --private-ip-address 10.0.9.10 --region eu-central-1 --profile devopsteam09 --output table
 ```
 
 ```
 [OUTPUT]
+-----------------------------------------------------------------------------
+|                               RunInstances                                |
++-------------------------------+-------------------------------------------+
+|  OwnerId                      |  709024702237                             |
+|  ReservationId                |  r-0c0c420ab77675cfe                      |
++-------------------------------+-------------------------------------------+
+||                                Instances                                ||
+|+--------------------------+----------------------------------------------+|
+||  AmiLaunchIndex          |  0                                           ||
+||  Architecture            |  x86_64                                      ||
+||  ClientToken             |  e2e68681-b907-4dd7-b8e0-1cc4df82b884        ||
+||  CurrentInstanceBootMode |  legacy-bios                                 ||
+||  EbsOptimized            |  False                                       ||
+||  EnaSupport              |  True                                        ||
+||  Hypervisor              |  xen                                         ||
+||  ImageId                 |  ami-0584590e5f0e97daa                       ||
+||  InstanceId              |  i-0505d348163787cc3                         ||
+||  InstanceType            |  t2.micro                                    ||
+||  KeyName                 |  KEY-I346-SUB-DEVOPSTEAM09                   ||
+||  LaunchTime              |  2025-03-18T14:41:16+00:00                   ||
+||  PrivateDnsName          |  ip-10-0-9-10.eu-central-1.compute.internal  ||
+||  PrivateIpAddress        |  10.0.9.10                                   ||
+||  PublicDnsName           |                                              ||
+||  RootDeviceName          |  /dev/xvda                                   ||
+||  RootDeviceType          |  ebs                                         ||
+||  SourceDestCheck         |  True                                        ||
+||  StateTransitionReason   |                                              ||
+||  SubnetId                |  subnet-0ab631f69a314e92d                    ||
+||  VirtualizationType      |  hvm                                         ||
+||  VpcId                   |  vpc-0a22d771f16ae549d                       ||
+|+--------------------------+----------------------------------------------+|
+|||                   CapacityReservationSpecification                    |||
+||+---------------------------------------------------------+-------------+||
+|||  CapacityReservationPreference                          |  open       |||
+||+---------------------------------------------------------+-------------+||
+|||                              CpuOptions                               |||
+||+-------------------------------------------------------+---------------+||
+|||  CoreCount                                            |  1            |||
+|||  ThreadsPerCore                                       |  1            |||
+||+-------------------------------------------------------+---------------+||
+|||                            EnclaveOptions                             |||
+||+--------------------------------------+--------------------------------+||
+|||  Enabled                             |  False                         |||
+||+--------------------------------------+--------------------------------+||
+|||                          MaintenanceOptions                           |||
+||+-----------------------------------------+-----------------------------+||
+|||  AutoRecovery                           |  default                    |||
+||+-----------------------------------------+-----------------------------+||
+|||                            MetadataOptions                            |||
+||+-------------------------------------------------+---------------------+||
+|||  HttpEndpoint                                   |  enabled            |||
+|||  HttpProtocolIpv6                               |  disabled           |||
+|||  HttpPutResponseHopLimit                        |  1                  |||
+|||  HttpTokens                                     |  optional           |||
+|||  InstanceMetadataTags                           |  disabled           |||
+|||  State                                          |  pending            |||
+||+-------------------------------------------------+---------------------+||
+|||                              Monitoring                               |||
+||+-----------------------------+-----------------------------------------+||
+|||  State                      |  disabled                               |||
+||+-----------------------------+-----------------------------------------+||
+|||                           NetworkInterfaces                           |||
+||+------------------------------+----------------------------------------+||
+|||  Description                 |                                        |||
+|||  InterfaceType               |  interface                             |||
+|||  MacAddress                  |  0a:d8:a3:05:ff:cd                     |||
+|||  NetworkInterfaceId          |  eni-03711aa89ee9fce92                 |||
+|||  OwnerId                     |  709024702237                          |||
+|||  PrivateIpAddress            |  10.0.9.10                             |||
+|||  SourceDestCheck             |  True                                  |||
+|||  Status                      |  in-use                                |||
+|||  SubnetId                    |  subnet-0ab631f69a314e92d              |||
+|||  VpcId                       |  vpc-0a22d771f16ae549d                 |||
+||+------------------------------+----------------------------------------+||
+||||                             Attachment                              ||||
+|||+----------------------------+----------------------------------------+|||
+||||  AttachTime                |  2025-03-18T14:41:16+00:00             ||||
+||||  AttachmentId              |  eni-attach-0f022a43986a2c207          ||||
+||||  DeleteOnTermination       |  True                                  ||||
+||||  DeviceIndex               |  0                                     ||||
+||||  NetworkCardIndex          |  0                                     ||||
+||||  Status                    |  attaching                             ||||
+|||+----------------------------+----------------------------------------+|||
+||||                               Groups                                ||||
+|||+--------------------+------------------------------------------------+|||
+||||  GroupId           |  sg-06c9cb6e3625401fa                          ||||
+||||  GroupName         |  secugrp-i346-devopsteam09                     ||||
+|||+--------------------+------------------------------------------------+|||
+||||                              Operator                               ||||
+|||+-------------------------------------+-------------------------------+|||
+||||  Managed                            |  False                        ||||
+|||+-------------------------------------+-------------------------------+|||
+||||                         PrivateIpAddresses                          ||||
+|||+-----------------------------------------+---------------------------+|||
+||||  Primary                                |  True                     ||||
+||||  PrivateIpAddress                       |  10.0.9.10                ||||
+|||+-----------------------------------------+---------------------------+|||
+|||                               Operator                                |||
+||+--------------------------------------+--------------------------------+||
+|||  Managed                             |  False                         |||
+||+--------------------------------------+--------------------------------+||
+|||                               Placement                               |||
+||+-------------------------------------+---------------------------------+||
+|||  AvailabilityZone                   |  eu-central-1c                  |||
+|||  GroupName                          |                                 |||
+|||  Tenancy                            |  default                        |||
+||+-------------------------------------+---------------------------------+||
+|||                         PrivateDnsNameOptions                         |||
+||+------------------------------------------------------+----------------+||
+|||  EnableResourceNameDnsAAAARecord                     |  False         |||
+|||  EnableResourceNameDnsARecord                        |  False         |||
+|||  HostnameType                                        |  ip-name       |||
+||+------------------------------------------------------+----------------+||
+|||                            SecurityGroups                             |||
+||+---------------------+-------------------------------------------------+||
+|||  GroupId            |  sg-06c9cb6e3625401fa                           |||
+|||  GroupName          |  secugrp-i346-devopsteam09                      |||
+||+---------------------+-------------------------------------------------+||
+|||                                 State                                 |||
+||+-----------------------------+-----------------------------------------+||
+|||  Code                       |  0                                      |||
+|||  Name                       |  pending                                |||
+||+-----------------------------+-----------------------------------------+||
+|||                              StateReason                              |||
+||+----------------------------------+------------------------------------+||
+|||  Code                            |  pending                           |||
+|||  Message                         |  pending                           |||
+||+----------------------------------+------------------------------------+||
 
 ```
