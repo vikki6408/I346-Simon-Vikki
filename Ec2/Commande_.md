@@ -582,24 +582,13 @@ $ aws ec2 associate-route-table^
 ```
 ### CREATE AND UPLOAD PRIVATE KEY PAIR
 
-* [AWS Official Doc - Associate route table to subnet](https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html)
+* [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
 
 ```bash
-$ aws ec2 associate-route-table^
---route-table-id rtb-0a9293aaf3c30b82c^
---subnet-id subnet-0ab631f69a314e92d^
---region eu-central-1^
---profile devopsteam09
+$ aws ec2 create-key-pair --key-name KEY-I346-SUB-DEVOPSTEAM99 --key-type rsa --key-format pem --tag-specifications 'ResourceType=key-pair,Tags=[{Key=Name,Value=KEY-I346-SUB-DEVOPSTEAM09}]' --region eu-central-1 --profile devopsteam09 --output text
 ```
 
 ```
 [OUTPUT]
-{
-    "AssociationId": "rtbassoc-02be5f3b76aee3c4c",
-    "AssociationState": {
-        "State": "associated"
-    }
-}
-
 
 ```
