@@ -770,3 +770,28 @@ $ aws ec2 create-tags --resources i-0505d348163787cc3 --tags Key=Name,Value=EC2-
 ||+----------------------------------+------------------------------------+||
 
 ```
+### CONNECT SSH ACCESS
+
+* [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
+
+```bash
+$ ssh devopsteam09@52.59.181.213 -i KEY-I346-DMZ-DEVOPSTEAM09.pem
+```
+
+```
+[OUTPUT]
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Wed Mar 19 11:34:33 2025 from 193.5.240.9
+devopsteam09@ip-10-0-0-10:~$ 
+```
+# pour sortir
+devopsteam09@ip-10-0-0-10:~$ exit
+logout
+Connection to 52.59.181.213 closed.
+```
+
