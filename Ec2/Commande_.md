@@ -814,4 +814,24 @@ permitted by applicable law.
 Last login: Wed Mar 19 11:36:39 2025 from 193.5.240.9
 devopsteam09@ip-10-0-0-10:~$
 
+
+
+### STOP INSTANCE 
+$ aws ec2 stop-instances --instance-ids i-0505d348163787cc3
+{
+    "StoppingInstances": [
+        {
+            "InstanceId": "i-0505d348163787cc3",
+            "CurrentState": {
+                "Code": 64,
+                "Name": "stopping"
+            },
+            "PreviousState": {
+                "Code": 16,
+                "Name": "running"
+            }
+        }
+    ]
+}
+
 ```
