@@ -567,7 +567,8 @@ $ aws ec2 create-security-group^
 --description secugrp-i346-devopsteam09^
 --vpc-id vpc-0a22d771f16ae549d^
 --tag-specifications 'ResourceType=security-group,Tags=[{Key=Name,Value=SG-DEVOPSTEAM09-SUBNET}]'^
---region eu-central-1 --profile devopsteam09^
+--region eu-central-1^
+--profile devopsteam09^
 --output table
 
 ```
