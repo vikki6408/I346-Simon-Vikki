@@ -794,4 +794,23 @@ devopsteam09@ip-10-0-0-10:~$ exit
 logout
 Connection to 52.59.181.213 closed.
 ```
+```
+### TUNNEL TO DMZ
+```bash
+$ ssh devopsteam09@52.59.181.213 -i KEY-I346-DMZ-DEVOPSTEAM09.pem -l 23:10.0.9.10:22 -l 3399:10.0.9.11:3389
+```
 
+```
+[OUTPUT]
+Linux ip-10-0-0-10 6.1.0-31-cloud-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.128-1 (2025-02-07) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Wed Mar 19 11:36:39 2025 from 193.5.240.9
+devopsteam09@ip-10-0-0-10:~$
+
+```
