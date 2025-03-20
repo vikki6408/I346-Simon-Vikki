@@ -600,6 +600,39 @@ $ aws ec2 create-key-pair --key-name KEY-I346-SUB-DEVOPSTEAM09 --key-type rsa --
 [OUTPUT]
 
 ```
+### AUTHORIZE SECURITY GROUP
+
+* [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
+
+```bash
+$ aws ec2 authorize-security-group-ingress --group-id sg-06c9cb6e3625401fa --ip-permissions "IpProtocol=tcp,FromPort=22,ToPort=22,IpRanges=[{CidrIp=10.0.0.0/28,Description=SSH-FROM-DMZ}]" --region eu-central-1 --profile devopsteam09 --output table
+
+
+$ aws ec2 authorize-security-group-ingress --group-id sg-06c9cb6e3625401fa --ip-permissions "IpProtocol=tcp,FromPort=3389,ToPort=3389,IpRanges=[{CidrIp=10.0.0.0/28,Description=RDP-FROM-DMZ}]" --region eu-central-1 --profile devopsteam09 --output table
+```
+
+```
+[OUTPUT]
+---------------------------------------------------------------------------------------------------------------
+|                                        AuthorizeSecurityGroupIngress                                        |
++------------------------------------------------------------+------------------------------------------------+
+|  Return                                                    |  True                                          |
++------------------------------------------------------------+------------------------------------------------+
+||                                            SecurityGroupRules                                             ||
+|+----------------------+------------------------------------------------------------------------------------+|
+||  CidrIpv4            |  10.0.0.0/28                                                                       ||
+||  Description         |  RDP-FROM-DMZ                                                                      ||
+||  FromPort            |  3389                                                                              ||
+||  GroupId             |  sg-06c9cb6e3625401fa                                                              ||
+||  GroupOwnerId        |  709024702237                                                                      ||
+||  IpProtocol          |  tcp                                                                               ||
+||  IsEgress            |  False                                                                             ||
+||  SecurityGroupRuleArn|  arn:aws:ec2:eu-central-1:709024702237:security-group-rule/sgr-03f0b754fe2e4adef   ||
+||  SecurityGroupRuleId |  sgr-03f0b754fe2e4adef                                                             ||
+||  ToPort              |  3389                                                                              ||
+|+----------------------+------------------------------------------------------------------------------------+|
+```
+
 ### DEPLOY INSTANCE EC2 WIN
 
 * [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
@@ -813,11 +846,24 @@ Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
 permitted by applicable law.
 Last login: Wed Mar 19 11:36:39 2025 from 193.5.240.9
 devopsteam09@ip-10-0-0-10:~$
-
-
-
-### STOP INSTANCE 
+```
+```
+```
+### START INSTANCE 
+```
 $ aws ec2 stop-instances --instance-ids i-0505d348163787cc3
+```
+```
+[OUPUT]
+
+
+```
+### STOP INSTANCE 
+```
+$ aws ec2 stop-instances --instance-ids i-0505d348163787cc3
+```
+```
+[OUPUT]
 {
     "StoppingInstances": [
         {
