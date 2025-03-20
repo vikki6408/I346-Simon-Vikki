@@ -588,18 +588,6 @@ $ aws ec2 create-security-group^
 |+-----------------------+-----------------------------------------------------------------------+|
 
 ```
-### CREATE AND UPLOAD PRIVATE KEY PAIR
-
-* [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
-
-```bash
-$ aws ec2 create-key-pair --key-name KEY-I346-SUB-DEVOPSTEAM09 --key-type rsa --key-format pem --tag-specifications 'ResourceType=key-pair,Tags=[{Key=Name,Value=KEY-I346-SUB-DEVOPSTEAM09}]' --region eu-central-1 --profile devopsteam09 --output text > KEY.pem
-```
-
-```
-[OUTPUT]
-
-```
 ### AUTHORIZE SECURITY GROUP
 
 * [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
@@ -632,6 +620,19 @@ $ aws ec2 authorize-security-group-ingress --group-id sg-06c9cb6e3625401fa --ip-
 ||  ToPort              |  3389                                                                              ||
 |+----------------------+------------------------------------------------------------------------------------+|
 ```
+### CREATE AND UPLOAD PRIVATE KEY PAIR
+
+* [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
+
+```bash
+$ aws ec2 create-key-pair --key-name KEY-I346-SUB-DEVOPSTEAM09 --key-type rsa --key-format pem --tag-specifications 'ResourceType=key-pair,Tags=[{Key=Name,Value=KEY-I346-SUB-DEVOPSTEAM09}]' --region eu-central-1 --profile devopsteam09 --output text > KEY.pem
+```
+
+```
+[OUTPUT]
+
+```
+
 
 ### DEPLOY INSTANCE EC2 WIN
 
@@ -851,11 +852,25 @@ devopsteam09@ip-10-0-0-10:~$
 ```
 ### START INSTANCE 
 ```
-$ aws ec2 stop-instances --instance-ids i-0505d348163787cc3
+$ aws ec2 start-instances --instance-ids i-0505d348163787cc3 --region eu-central-1 --profile devopsteam09
 ```
 ```
 [OUPUT]
-
+{
+    "StartingInstances": [
+        {
+            "InstanceId": "i-0505d348163787cc3",
+            "CurrentState": {
+                "Code": 0,
+                "Name": "pending"
+            },
+            "PreviousState": {
+                "Code": 80,
+                "Name": "stopped"
+            }
+        }
+    ]
+}
 
 ```
 ### STOP INSTANCE 
