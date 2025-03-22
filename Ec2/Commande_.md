@@ -832,7 +832,7 @@ Connection to 52.59.181.213 closed.
 ```
 ### TUNNEL TO DMZ
 ```bash
-$ ssh devopsteam09@52.59.181.213 -i KEY-I346-DMZ-DEVOPSTEAM09.pem -l 23:10.0.9.10:22 -l 3399:10.0.9.11:3389
+$ ssh devopsteam09@52.59.181.213 -i KEY-I346-DMZ-DEVOPSTEAM09.pem -L 23:10.0.9.10:22 -L 3399:10.0.9.11:3389
 ```
 
 ```
@@ -895,4 +895,73 @@ $ aws ec2 stop-instances --instance-ids i-0505d348163787cc3
     ]
 }
 
+```
+### TEST EC2 LIN ACCESS -INBOUND 
+```
+$ ssh admin@localhost -p 23 -i KEY.pem
+```
+```
+[OUPUT]
+The authenticity of host '[localhost]:23 ([::1]:23)' can't be established.
+ED25519 key fingerprint is SHA256:TdbDIJ96QG9RvccOUkTaNwLRnIcqIx00aK/vQeCH+fI.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[localhost]:23' (ED25519) to the list of known hosts.
+Linux ip-10-0-9-10 6.1.0-32-cloud-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.129-1 (2025-03-06) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Fri Mar 21 14:56:05 2025 from 10.0.0.10
+admin@ip-10-0-9-10:~$
+```
+
+### TEST EC2 WIN ACCESS -INBOUND 
+```
+Ouvrir bureau à distance
+```
+```
+[Paramètres à rentrer]
+![image](https://github.com/user-attachments/assets/caeb9069-3ebd-41c6-b0a9-1af07a485597)
+```
+
+```
+Obtenir le mot de passe : $ aws ec2 get-password-data --instance-id i-0a168859ac1de6290 --priv-launch-key KEY.pem --region eu-central-1 --profile devopsteam09
+```
+```
+[POUTPUT]
+{
+    "InstanceId": "i-0a168859ac1de6290",
+    "Timestamp": "2025-03-18T14:51:49+00:00",
+    "PasswordData": "g=.A1zwv(Bi6hmCrzLml*&tiThu$0Bi&"
+}
+```
+
+### TEST EC2 LIN - ACCESS - OUTBOUND 
+```
+$ ping 8.8.8.8
+```
+```
+[OUPUT]
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=57 time=1.66 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=57 time=1.81 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=57 time=2.63 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=57 time=2.10 ms
+^C
+--- 8.8.8.8 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+rtt min/avg/max/mdev = 1.659/2.051/2.634/0.372 ms
+```
+
+### TEST EC2 WIN - ACCESS - OUTBOUND 
+```
+$ ping 8.8.8.8
+```
+```
+[OUPUT]
+![image](https://github.com/user-attachments/assets/80ab7435-da0c-4937-b51f-87e7d8b0bf9a)
 ```
