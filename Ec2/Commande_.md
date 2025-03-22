@@ -671,8 +671,13 @@ $ aws ec2 run-instances ^
 --profile devopsteam09 ^
 --output table
 ```
-ATTENTION PAS OBLIé LE TAG
+
+```
+ATTENTION PAS OUBLIÉ LE TAG
+```
+```
 $ aws ec2 create-tags --resources i-0505d348163787cc3 --tags Key=Name,Value=EC2-DEVOPSTEAM09-LIN-SRV
+```
 ```
 [OUTPUT]
 -----------------------------------------------------------------------------
@@ -824,11 +829,16 @@ permitted by applicable law.
 Last login: Wed Mar 19 11:34:33 2025 from 193.5.240.9
 devopsteam09@ip-10-0-0-10:~$ 
 ```
-# pour sortir
+```
+```
+### POUR SORTIR
+```
+```
 devopsteam09@ip-10-0-0-10:~$ exit
+```
+```
 logout
 Connection to 52.59.181.213 closed.
-```
 ```
 ### TUNNEL TO DMZ
 ```bash
