@@ -833,10 +833,10 @@ devopsteam09@ip-10-0-0-10:~$
 ```
 ### POUR SORTIR
 ```
-```
 devopsteam09@ip-10-0-0-10:~$ exit
 ```
 ```
+[OUTPUT]
 logout
 Connection to 52.59.181.213 closed.
 ```
