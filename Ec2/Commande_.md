@@ -634,7 +634,7 @@ $ aws ec2 authorize-security-group-ingress ^
 ```
 ### CREATE AND UPLOAD PRIVATE KEY PAIR
 
-* [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html)
+* [AWS Official Doc - Create Key pair](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html)
 
 ```bash
 $ aws ec2 create-key-pair ^
