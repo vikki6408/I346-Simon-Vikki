@@ -469,7 +469,7 @@ $ aws ec2 describe-subnets ^
 
 ### CREATE ROUTE TABLE
 
-* [AWS Official Doc - Create route table]([https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples](https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ec2/create-route-table.html)
+* [AWS Official Doc - Create route table](https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ec2/create-route-table.html)
 
 ```bash
 $ aws ec2 create-route-table ^
@@ -518,7 +518,7 @@ $ aws ec2 create-tags ^
 
 ### ADD ROUTE IN ROUTE TABLE
 
-* [AWS Official Doc - Add route in route table]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ec2/create-route.html)
+* [AWS Official Doc - Add route in route table](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-route.html)
 
 ```bash
 $ aws ec2 create-route ^
