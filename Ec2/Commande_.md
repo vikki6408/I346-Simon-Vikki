@@ -469,7 +469,7 @@ $ aws ec2 describe-subnets ^
 
 ### CREATE ROUTE TABLE
 
-* [AWS Official Doc - Create route table]([https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples](https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ec2/create-route-table.html))
+* [AWS Official Doc - Create route table]([https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples](https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ec2/create-route-table.html)
 
 ```bash
 $ aws ec2 create-route-table ^
@@ -503,7 +503,7 @@ $ aws ec2 create-route-table ^
 
 ### ADD TAG NAME AFTER CREATION (Route table)
 
-* [AWS Official Doc - add tag]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-tags.html))
+* [AWS Official Doc - add tag]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-tags.html)
 
 ```bash
 $ aws ec2 create-tags ^
@@ -518,7 +518,7 @@ $ aws ec2 create-tags ^
 
 ### ADD ROUTE IN ROUTE TABLE
 
-* [AWS Official Doc - Add route in route table]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ec2/create-route.html))
+* [AWS Official Doc - Add route in route table]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ec2/create-route.html)
 
 ```bash
 $ aws ec2 create-route ^
@@ -634,7 +634,7 @@ $ aws ec2 authorize-security-group-ingress ^
 ```
 ### CREATE AND UPLOAD PRIVATE KEY PAIR
 
-* [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
+* [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html)
 
 ```bash
 $ aws ec2 create-key-pair ^
