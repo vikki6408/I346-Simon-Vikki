@@ -649,7 +649,7 @@ $ aws ec2 create-key-pair ^
 
 ```
 [OUTPUT]
-
+(Un fichier aura aussi été créer dans votre explorateur de fichier avec la clé)
 ```
 
 
