@@ -850,8 +850,8 @@ permitted by applicable law.
 Last login: Wed Mar 19 11:34:33 2025 from 193.5.240.9
 devopsteam09@ip-10-0-0-10:~$ 
 ```
-```
-```
+
+
 ### POUR SORTIR
 ```
 devopsteam09@ip-10-0-0-10:~$ exit
