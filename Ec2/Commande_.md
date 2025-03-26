@@ -834,8 +834,6 @@ $ aws ec2 create-tags ^
 ```
 ### CONNECT SSH ACCESS
 
-* [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
-
 ```bash
 $ ssh devopsteam09@52.59.181.213 ^
    -i KEY-I346-DMZ-DEVOPSTEAM09.pem
@@ -1023,4 +1021,65 @@ Ping statistics for 8.8.8.8:
    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
 Approximate round trip times in milli-seconds:
    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+```
+
+
+### CLEAN SUBNET
+
+* [AWS Official Doc -delete subnet](https://awscli.amazonaws.com/v2/documentation/api/2.7.25/reference/ec2/delete-subnet.html)
+
+```
+$ aws ec2 delete-subnet ^
+--subnet-id subnet-0ab631f69a314e92d ^
+--profile devopsteam09 ^
+--region eu-central-1
+```
+```
+[OUPUT]
+
+```
+
+### CLEAN KEY
+
+* [AWS Official Doc -delete key](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/delete-key-pair.html)
+
+```
+$ aws ec2 delete-key-pair ^
+--key-name KEY-I346-SUB-DEVOPSTEAM09 ^
+--profile devopsteam09 ^
+--region eu-central-1
+```
+```
+[OUPUT]
+
+```
+
+### CLEAN INSTANCES (Exemple avec la linux)
+
+* [AWS Official Doc -delete instance](https://awscli.amazonaws.com/v2/documentation/api/2.0.33/reference/ec2/terminate-instances.html)
+
+```
+$ aws ec2 terminate-instances ^
+--instance-ids i-0505d348163787cc3 ^
+--profile devopsteam09 ^
+--region eu-central-1
+```
+```
+[OUPUT]
+
+```
+
+### CLEAN SECURITY GROUP 
+
+* [AWS Official Doc -delete securiity group](https://awscli.amazonaws.com/v2/documentation/api/2.3.2/reference/ec2/delete-security-group.html)
+
+```
+$ aws ec2 delete-security-group ^
+--group-id sg-06c9cb6e3625401fa ^
+--profile devopsteam09 ^
+--region eu-central-1
+```
+```
+[OUPUT]
+
 ```
