@@ -691,10 +691,8 @@ $ aws ec2 run-instances ^
 --output table
 ```
 
-```
-### ATTENTION PAS OUBLIÉ LE TAG (Commande pour le rajouter après la création)
-```
 
+### ATTENTION PAS OUBLIÉ LE TAG (Commande pour le rajouter après la création)
 ```
 $ aws ec2 create-tags ^
 --resources i-0505d348163787cc3 ^
@@ -882,9 +880,7 @@ permitted by applicable law.
 Last login: Wed Mar 19 11:36:39 2025 from 193.5.240.9
 devopsteam09@ip-10-0-0-10:~$
 ```
-```
 
-```
 ### START INSTANCE 
 ```
 $ aws ec2 start-instances ^
