@@ -506,7 +506,9 @@ $ aws ec2 create-route-table ^
 * [AWS Official Doc - add tag]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-tags.html))
 
 ```bash
-$ aws ec2 create-tags --resources rtb-0a9293aaf3c30b82c --tags Key=Name,Value=private-rte-table-devopsteam09
+$ aws ec2 create-tags ^
+ --resources rtb-0a9293aaf3c30b82c
+--tags Key=Name,Value=private-rte-table-devopsteam09
 ```
 
 ```
@@ -590,13 +592,23 @@ $ aws ec2 create-security-group^
 ```
 ### AUTHORIZE SECURITY GROUP
 
-* [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
+* [AWS Official Doc - Authorize-Security-Group](https://awscli.amazonaws.com/v2/documentation/api/2.1.30/reference/ec2/authorize-security-group-ingress.html)
 
 ```bash
-$ aws ec2 authorize-security-group-ingress --group-id sg-06c9cb6e3625401fa --ip-permissions "IpProtocol=tcp,FromPort=22,ToPort=22,IpRanges=[{CidrIp=10.0.0.0/28,Description=SSH-FROM-DMZ}]" --region eu-central-1 --profile devopsteam09 --output table
+$ aws ec2 authorize-security-group-ingress ^
+--group-id sg-06c9cb6e3625401fa ^
+--ip-permissions "IpProtocol=tcp,FromPort=22,ToPort=22,IpRanges=[{CidrIp=10.0.0.0/28,Description=SSH-FROM-DMZ}]" ^
+--region eu-central-1 ^
+ --profile devopsteam09 ^
+ --output table
 
 
-$ aws ec2 authorize-security-group-ingress --group-id sg-06c9cb6e3625401fa --ip-permissions "IpProtocol=tcp,FromPort=3389,ToPort=3389,IpRanges=[{CidrIp=10.0.0.0/28,Description=RDP-FROM-DMZ}]" --region eu-central-1 --profile devopsteam09 --output table
+$ aws ec2 authorize-security-group-ingress ^
+ --group-id sg-06c9cb6e3625401fa ^
+ --ip-permissions "IpProtocol=tcp,FromPort=3389,ToPort=3389,IpRanges=[{CidrIp=10.0.0.0/28,Description=RDP-FROM-DMZ}]" ^
+--region eu-central-1 ^
+--profile devopsteam09 ^
+--output table
 ```
 
 ```
@@ -625,7 +637,14 @@ $ aws ec2 authorize-security-group-ingress --group-id sg-06c9cb6e3625401fa --ip-
 * [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
 
 ```bash
-$ aws ec2 create-key-pair --key-name KEY-I346-SUB-DEVOPSTEAM09 --key-type rsa --key-format pem --tag-specifications 'ResourceType=key-pair,Tags=[{Key=Name,Value=KEY-I346-SUB-DEVOPSTEAM09}]' --region eu-central-1 --profile devopsteam09 --output text > KEY.pem
+$ aws ec2 create-key-pair ^
+--key-name KEY-I346-SUB-DEVOPSTEAM09 ^
+--key-type rsa ^
+--key-format pem ^
+--tag-specifications 'ResourceType=key-pair,Tags=[{Key=Name,Value=KEY-I346-SUB-DEVOPSTEAM09}]' ^
+--region eu-central-1 ^
+--profile devopsteam09 ^
+--output text > KEY.pem
 ```
 
 ```
@@ -636,7 +655,7 @@ $ aws ec2 create-key-pair --key-name KEY-I346-SUB-DEVOPSTEAM09 --key-type rsa --
 
 ### DEPLOY INSTANCE EC2 WIN
 
-* [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
+* [AWS Official Doc - Deploy Instance](https://awscli.amazonaws.com/v2/documentation/api/2.0.34/reference/ec2/run-instances.html)
 
 ```bash
 $ aws ec2 run-instances ^
@@ -657,7 +676,7 @@ $ aws ec2 run-instances ^
 ```
 ### DEPLOY INSTANCE EC2 LIN
 
-* [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
+* [AWS Official Doc - Deploy Instance](https://awscli.amazonaws.com/v2/documentation/api/2.0.34/reference/ec2/run-instances.html)
 
 ```bash
 $ aws ec2 run-instances ^
@@ -673,10 +692,13 @@ $ aws ec2 run-instances ^
 ```
 
 ```
-ATTENTION PAS OUBLIÉ LE TAG
+### ATTENTION PAS OUBLIÉ LE TAG (Commande pour le rajouter après la création)
 ```
+
 ```
-$ aws ec2 create-tags --resources i-0505d348163787cc3 --tags Key=Name,Value=EC2-DEVOPSTEAM09-LIN-SRV
+$ aws ec2 create-tags ^
+--resources i-0505d348163787cc3 ^
+--tags Key=Name,Value=EC2-DEVOPSTEAM09-LIN-SRV
 ```
 ```
 [OUTPUT]
@@ -815,7 +837,8 @@ $ aws ec2 create-tags --resources i-0505d348163787cc3 --tags Key=Name,Value=EC2-
 * [AWS Official Doc - Create Key pair]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html))
 
 ```bash
-$ ssh devopsteam09@52.59.181.213 -i KEY-I346-DMZ-DEVOPSTEAM09.pem
+$ ssh devopsteam09@52.59.181.213 ^
+   -i KEY-I346-DMZ-DEVOPSTEAM09.pem
 ```
 
 ```
@@ -842,7 +865,10 @@ Connection to 52.59.181.213 closed.
 ```
 ### TUNNEL TO DMZ
 ```bash
-$ ssh devopsteam09@52.59.181.213 -i KEY-I346-DMZ-DEVOPSTEAM09.pem -L 23:10.0.9.10:22 -L 3399:10.0.9.11:3389
+$ ssh devopsteam09@52.59.181.213 ^
+   -i KEY-I346-DMZ-DEVOPSTEAM09.pem ^
+   -L 23:10.0.9.10:22 ^
+   -L 3399:10.0.9.11:3389
 ```
 
 ```
@@ -863,7 +889,10 @@ devopsteam09@ip-10-0-0-10:~$
 ```
 ### START INSTANCE 
 ```
-$ aws ec2 start-instances --instance-ids i-0505d348163787cc3 --region eu-central-1 --profile devopsteam09
+$ aws ec2 start-instances ^
+--instance-ids i-0505d348163787cc3 ^
+--region eu-central-1 ^
+--profile devopsteam09
 ```
 ```
 [OUPUT]
@@ -886,7 +915,10 @@ $ aws ec2 start-instances --instance-ids i-0505d348163787cc3 --region eu-central
 ```
 ### STOP INSTANCE 
 ```
-$ aws ec2 stop-instances --instance-ids i-0505d348163787cc3 --region eu-central-1 --profile devopsteam09
+$ aws ec2 stop-instances ^
+--instance-ids i-0505d348163787cc3 ^
+--region eu-central-1 ^
+--profile devopsteam09
 ```
 ```
 [OUPUT]
@@ -909,7 +941,9 @@ $ aws ec2 stop-instances --instance-ids i-0505d348163787cc3 --region eu-central-
 ```
 ### TEST EC2 LIN ACCESS -INBOUND 
 ```
-$ ssh admin@localhost -p 23 -i KEY.pem
+$ ssh admin@localhost ^
+    -p 23
+    -i KEY.pem
 ```
 ```
 [OUPUT]
@@ -940,7 +974,12 @@ Ouvrir bureau à distance
 ```
 
 ```
-Obtenir le mot de passe : $ aws ec2 get-password-data --instance-id i-0a168859ac1de6290 --priv-launch-key KEY.pem --region eu-central-1 --profile devopsteam09
+Obtenir le mot de passe :
+$ aws ec2 get-password-data ^
+--instance-id i-0a168859ac1de6290 ^
+--priv-launch-key KEY.pem ^
+--region eu-central-1 ^
+--profile devopsteam09
 ```
 ```
 [POUTPUT]
@@ -974,5 +1013,14 @@ $ ping 8.8.8.8
 ```
 ```
 [OUPUT]
-![image](https://github.com/user-attachments/assets/80ab7435-da0c-4937-b51f-87e7d8b0bf9a)
+Pinging 8.8.8.8 with 32 bytes of data:
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=57
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=57
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=57
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=57
+
+Ping statistics for 8.8.8.8:
+   Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+   Minimum = 1ms, Maximum = 1ms, Average = 1ms
 ```
