@@ -503,7 +503,7 @@ $ aws ec2 create-route-table ^
 
 ### ADD TAG NAME AFTER CREATION (Route table)
 
-* [AWS Official Doc - add tag]([https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-tags.html)
+* [AWS Official Doc - add tag](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-tags.html)
 
 ```bash
 $ aws ec2 create-tags ^
